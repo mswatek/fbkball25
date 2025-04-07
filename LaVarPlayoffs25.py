@@ -204,9 +204,9 @@ def scores(df):
 
 matchup1, matchup2, matchup3, matchup4, matchup5, matchup6 = [scores(df) for df in (matchup1, matchup2, matchup3, matchup4, matchup5, matchup6)]
 
-##### Semis Combined #####
+##### Finals Combined #####
 
-df_combined = pd.concat([df_19,df_20])
+df_combined = pd.concat([df_21,df_22])
 df_combined.drop(columns=['FGM/FGA', 'FG%','FTM/FTA','FT%'])
 
 df_matchups = df_combined.groupby(['Team'])[["FGM", "FGA","FTM","FTA","3PTM","PTS","REB","AST","ST","BLK","TO"]].apply(lambda x : x.astype(int).sum())
@@ -246,7 +246,6 @@ def scores(df):
 
 
 finals1, finals2, finals3, finals4 = [scores(df) for df in (finals1, finals2, finals3, finals4)]
-
 
 #################### PRINTING TO SITE #####################
 
